@@ -15,6 +15,7 @@ public class HpBar : MonoBehaviour
     void Start()
     {
         Sethpbar();
+        Sethpslider();
         Settext();
     }
 
@@ -24,13 +25,23 @@ public class HpBar : MonoBehaviour
         
     }
 
+    //최대 체력에 따라 길이 설정
+    public void Sethpbar(){
+        RectTransform rectTransform = gameObject.transform.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(maxhp*2, rectTransform.sizeDelta.y);
+    }
+
     //hp비율 반환
     public float SetHp(){
-        return (float)curhp/(float)maxhp;
+        if(maxhp<=0&&curhp>=maxhp){
+            return 0;
+        }else{
+            return (float)curhp/(float)maxhp;
+        }
     }
 
     //피 비율에 따라 슬라이더 설정하기
-    public void Sethpbar(){
+    public void Sethpslider(){
         Slider slider = GetComponent<Slider>();
         slider.value = SetHp();
     }
