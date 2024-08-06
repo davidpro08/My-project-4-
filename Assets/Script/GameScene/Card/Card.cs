@@ -4,39 +4,24 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    //카드 효과
+    public string effect;
     //카드 이름
-    public string cardName;
-    //카드 타입
-    public string type;
-    //카드 코스트
+    public string cardname;
+    /*카드 타입
+    1. 방어
+    2. 공격
+    3. 특수
+    4. 효과
+    5. 미정
+    */
+    public int type;
+    //카드 비용
     public int cost;
     //카드 위력
     public int amount;
-    //카드 공격 유형
+    //카드 공격 타입
     public string attackType;
-
-    /*
-    자식들을 명명함
-    1. 카드 배경
-    2. 카드 효과
-    3. 카드 이미지
-    4. 카드 이미지 배경
-    5. 카드 이름
-    6. 카드 타입
-    7. 카드 코스트
-    8. 카드 위력
-    9. 카드 공격 타입
-    */
-    public GameObject cardBackground;
-    public GameObject cardEffect;
-    public GameObject cardImage;
-    public GameObject cardImageBackground;
-    public GameObject cardNameObject;
-    public GameObject cardType;
-    public GameObject cardCost;
-    public GameObject cardAmount;
-    public GameObject cardAttackType;
-
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +33,14 @@ public class Card : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void VariableUpdate(Card apply){
+        this.effect = apply.effect;
+        this.cardname = apply.cardname;
+        this.type = apply.type;
+        this.cost = apply.cost;
+        this.amount = apply.amount;
+        this.attackType = apply.attackType;
     }
 }

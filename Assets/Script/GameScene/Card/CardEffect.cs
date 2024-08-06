@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CardCost : MonoBehaviour
+public class CardEffect : MonoBehaviour
 {
     public Card card;
     public GameObject background;
-    public GameObject textCost;
+    public GameObject textEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,11 +21,11 @@ public class CardCost : MonoBehaviour
     }
 
     private void TextApply(){
-        TextMeshProUGUI text = textCost.GetComponent<TextMeshProUGUI>();
-        if(card.cost<0){
-            text.text = "cost error";
+        TextMeshProUGUI text = textEffect.GetComponent<TextMeshProUGUI>();
+        if(card.effect==""&&card.effect==(null)){
+            text.text = "card null";
         }else{
-            text.text = card.cost.ToString();
+            text.text = card.effect;
         }
     }
 }

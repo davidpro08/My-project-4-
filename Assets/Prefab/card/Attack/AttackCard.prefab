@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 5264276001786436210}
   - component: {fileID: 2565538060201293760}
   m_Layer: 5
-  m_Name: Card
+  m_Name: AttackCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: "\uACF5\uACA9\uD569\uB2C8\uB2E4"
-  cardname: "\uACF5\uACA9\uCE74\uB4DC2"
+  cardname: "\uACF5\uACA9\uCE74\uB4DC1"
   type: 2
-  cost: 1
-  amount: 1
+  cost: 5
+  amount: 11
   attackType: "\uCE7C"
 --- !u!1 &654026207151454425
 GameObject:
@@ -1299,7 +1299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: -120}
+  m_AnchoredPosition: {x: 90, y: -145}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7466461264654580843
@@ -1496,13 +1496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 2565538060201293760}
   background: {fileID: 6901496890439708601}
-  sprites:
-  - {fileID: 21079388, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  - {fileID: 21079388, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  - {fileID: -1306072882, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  - {fileID: -1510087667, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  - {fileID: -1848027349, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
-  - {fileID: 203820132, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  sprites: []
   textAmount: {fileID: 6032288654370388198}
 --- !u!1 &6901496890439708601
 GameObject:
@@ -1538,8 +1532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: -130}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 90, y: -155}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7948958737499604815
 CanvasRenderer:
