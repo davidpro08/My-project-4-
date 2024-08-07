@@ -4,18 +4,19 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardCost : MonoBehaviour
+public class CardAttacktype : MonoBehaviour
 {
     public Card card;
     public GameObject background;
+    public GameObject attackType;
 
-    public Sprite[] sprites;
-    public GameObject textCost;
+    public Sprite[] backgroundsprite;
+    public Sprite[] attacktypesprite;
     // Start is called before the first frame update
     void Awake()
     {
-        TextApply(textCost, card.cost);
-        BackgroundApply(background, card.type, sprites);
+        BackgroundApply(background, card.type, backgroundsprite);
+        BackgroundApply(attackType, card.attackType, attacktypesprite);
     }
 
     // Update is called once per frame
@@ -23,18 +24,8 @@ public class CardCost : MonoBehaviour
     {
         
     }
-
-        private void TextApply(GameObject textapply, int cost){
-        TextMeshProUGUI text = textapply.GetComponent<TextMeshProUGUI>();
-        if(cost<0){
-            text.text = "cost error";
-        }else{
-            text.text = cost.ToString();
-        }
-    }
-
     private void BackgroundApply(GameObject backgroundapply, int type, Sprite[] sprites){
-        Image image = background.GetComponent<Image>();
+        Image image = backgroundapply.GetComponent<Image>();
         if(type>=1 && type<=5){
             image.sprite = sprites[type];
         }else{

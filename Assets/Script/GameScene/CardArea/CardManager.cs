@@ -123,9 +123,10 @@ public class CardManager : MonoBehaviour
 
             //영역에 넣기
             copyed[index].transform.SetParent(area.transform);
+
             //카드에 적용
             Card card = createcard.transform.GetComponent<Card>();
-            card.VariableUpdate(cardlist[index]);
+            CopyCard(card, cardlist[index]);
 
             //위치 설정
             RectTransform rectTransform = copyed[index].GetComponent<RectTransform>();
@@ -135,6 +136,17 @@ public class CardManager : MonoBehaviour
         }else{
             Debug.Log("card 프리팹 없음. 카드 프리팹이 삭제되었는지 확인하거나 HandArea에 안 들어갔는지 확인하기");
         }
+    }
+
+    //카드 두개를 받아서 하나의 정보를 다른쪽에 옮김
+    public void CopyCard(Card copy, Card apply){
+        copy.effect = apply.effect;
+        copy.cardname = apply.cardname;
+        copy.type = apply.type;
+        copy.character = apply.character;
+        copy.cost = apply.cost;
+        copy.amount = apply.amount;
+        copy.attackType = apply.attackType;
     }
 
 }

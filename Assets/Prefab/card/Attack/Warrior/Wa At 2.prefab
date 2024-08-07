@@ -58,6 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3258306647046565419}
+  - component: {fileID: 7665934358117670246}
   m_Layer: 0
   m_Name: CardAttackType
   m_TagString: Untagged
@@ -82,6 +83,35 @@ Transform:
   - {fileID: 4444496189503044463}
   m_Father: {fileID: 5264276001786436210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7665934358117670246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395702264208837752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2018fc136c7abff4fa5996ea4a0d86cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 2565538060201293760}
+  background: {fileID: 4123439104252252883}
+  attackType: {fileID: 3705352420981050005}
+  backgroundsprite:
+  - {fileID: 1873686710, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1721531094, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 1873686710, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 380853605, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -616467193, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -2141949140, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  attacktypesprite:
+  - {fileID: 1629502028, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 1629502028, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1024736645, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -564823535, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1751398833, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -873690648, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
 --- !u!1 &495562047810105570
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +198,7 @@ GameObject:
   - component: {fileID: 5264276001786436210}
   - component: {fileID: 2565538060201293760}
   m_Layer: 5
-  m_Name: DefendCard
+  m_Name: Wa At 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,12 +243,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b441b0f7d79214ebecc014bea5b264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: "\uBC29\uC5B4\uD569\uB2C8\uB2E4"
-  cardname: "\uBC29\uC5B4\uCE74\uB4DC 1"
+  effect: "\uD53C\uD574\uB97C amount\uB9CC\uD07C \uC90D\uB2C8\uB2E4"
+  cardname: "\uD0C0\uACA9"
   type: 1
-  cost: 5
-  amount: 11
-  attackType: "\uBC29\uD328"
+  character: 1
+  cost: 1
+  amount: 6
+  attackType: 1
 --- !u!1 &654026207151454425
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +373,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 2565538060201293760}
   background: {fileID: 8170816945144092153}
+  sprites:
+  - {fileID: 779533456, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 349058381, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 779533456, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1664420051, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 2118651719, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1654849837, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
   textCost: {fileID: 5081846933085399532}
 --- !u!1 &1810296486128533089
 GameObject:
@@ -427,6 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2902684917511883635}
+  - component: {fileID: 7558769593621104533}
   m_Layer: 5
   m_Name: CardBackground
   m_TagString: Untagged
@@ -455,6 +494,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7558769593621104533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749252808335312471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15caa9d7d8a5bb940ba7bd606e5d8068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 2565538060201293760}
+  background: {fileID: 8612208524726797289}
+  sprites:
+  - {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  - {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  - {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  - {fileID: 285830086, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  - {fileID: 2106880055, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  - {fileID: -1595437289, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
 --- !u!1 &2953148489478116158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: -145}
+  m_AnchoredPosition: {x: 85, y: -120}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7466461264654580843
@@ -1496,7 +1556,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   card: {fileID: 2565538060201293760}
   background: {fileID: 6901496890439708601}
-  sprites: []
+  sprites:
+  - {fileID: 21079388, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1306072882, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 21079388, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1510087667, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: -1848027349, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
+  - {fileID: 203820132, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
   textAmount: {fileID: 6032288654370388198}
 --- !u!1 &6901496890439708601
 GameObject:
@@ -1532,8 +1598,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: -155}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 85, y: -130}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7948958737499604815
 CanvasRenderer:

@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 5264276001786436210}
   - component: {fileID: 2565538060201293760}
   m_Layer: 5
-  m_Name: Card
+  m_Name: Wa At 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,12 +243,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b441b0f7d79214ebecc014bea5b264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: "\uACF5\uACA9\uD569\uB2C8\uB2E4"
-  cardname: "\uACF5\uACA9\uCE74\uB4DC2"
-  type: 2
+  effect: "\uC804\uCCB4\uC5D0\uAC8C \uD53C\uD574\uB97C amount\uB9CC\uD07C \uC90D\uB2C8\uB2E4"
+  cardname: "\uC804\uCCB4 \uD0C0\uACA9"
+  type: 1
   character: 1
   cost: 1
-  amount: 1
+  amount: 4
   attackType: 1
 --- !u!1 &654026207151454425
 GameObject:
@@ -510,8 +510,8 @@ MonoBehaviour:
   background: {fileID: 8612208524726797289}
   sprites:
   - {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
-  - {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+  - {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: 285830086, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: 2106880055, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
   - {fileID: -1595437289, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}

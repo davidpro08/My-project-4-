@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,9 +10,9 @@ public class CardName : MonoBehaviour
     public GameObject background;
     public GameObject textName;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        TextApply();
+        TextApply(textName, card.cardname);
     }
 
     // Update is called once per frame
@@ -20,12 +21,12 @@ public class CardName : MonoBehaviour
         
     }
 
-    private void TextApply(){
-        TextMeshProUGUI text = textName.GetComponent<TextMeshProUGUI>();
-        if(card.cardname==""&&card.cardname==(null)){
-            text.text = "name null";
+    private void TextApply(GameObject textapply, string cardname){
+        TextMeshProUGUI temptext = textapply.GetComponent<TextMeshProUGUI>();
+        if(cardname.Equals("") || cardname.Equals(null)){
+            temptext.text = "name error";
         }else{
-            text.text = card.cardname;
+            temptext.text = cardname;
         }
     }
 }

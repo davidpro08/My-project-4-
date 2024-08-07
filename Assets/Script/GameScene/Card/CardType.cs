@@ -23,8 +23,8 @@ public class CardType : MonoBehaviour
     private void TextApply(GameObject textapply, int type){
         TextMeshProUGUI temptext = textapply.GetComponent<TextMeshProUGUI>();
         switch(type){
-            case 1 : temptext.text = "방어"; break;
-            case 2 : temptext.text = "공격"; break;
+            case 1 : temptext.text = "공격"; break;
+            case 2 : temptext.text = "방어"; break;
             case 3 : temptext.text = "특수"; break;
             case 4 : temptext.text = "효과"; break;
             case 5 : temptext.text = "미정"; break;

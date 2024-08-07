@@ -9,9 +9,9 @@ public class CardEffect : MonoBehaviour
     public GameObject background;
     public GameObject textEffect;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        TextApply();
+        TextApply(textEffect, card.effect);
     }
 
     // Update is called once per frame
@@ -20,12 +20,12 @@ public class CardEffect : MonoBehaviour
         
     }
 
-    private void TextApply(){
-        TextMeshProUGUI text = textEffect.GetComponent<TextMeshProUGUI>();
-        if(card.effect==""&&card.effect==(null)){
-            text.text = "card null";
+    private void TextApply(GameObject textapply, string effect){
+        TextMeshProUGUI temptext = textapply.GetComponent<TextMeshProUGUI>();
+        if(effect.Equals("") || effect.Equals(null)){
+            temptext.text = "effect error";
         }else{
-            text.text = card.effect;
+            temptext.text = effect;
         }
     }
 }
