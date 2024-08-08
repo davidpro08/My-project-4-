@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b441b0f7d79214ebecc014bea5b264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: "\uAD81\uADF9\uC758 \uBC29\uC5B4"
-  cardname: "\uBB34\uC870\uAC74 99\uB9CC\uD07C\uC758 \uBC29\uC5B4\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
+  effect: "\uBB34\uC870\uAC74 99\uB9CC\uD07C\uC758 \uBC29\uC5B4\uB97C \uC5BB\uC2B5\uB2C8\uB2E4."
+  cardname: "\uAD81\uADF9\uC758 \uBC29\uC5B4"
   type: 2
   character: 1
   cost: 5

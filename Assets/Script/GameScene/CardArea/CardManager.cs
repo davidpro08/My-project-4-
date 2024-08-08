@@ -125,8 +125,9 @@ public class CardManager : MonoBehaviour
             copyed[index].transform.SetParent(area.transform);
 
             //카드에 적용
-            Card card = createcard.transform.GetComponent<Card>();
+            Card card = copyed[index].transform.GetComponent<Card>();
             CopyCard(card, cardlist[index]);
+            card.ApplyScript();
 
             //위치 설정
             RectTransform rectTransform = copyed[index].GetComponent<RectTransform>();

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 270590451321691344}
-  - component: {fileID: 4652820811311046581}
+  - component: {fileID: 1745805735083685066}
   m_Layer: 0
   m_Name: CardEffect
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 6609574394732839385}
   m_Father: {fileID: 5264276001786436210}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4652820811311046581
+--- !u!114 &1745805735083685066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,12 +43,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 374654430153730634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23654591a062534a9d7cb3905e3ce37, type: 3}
+  m_Script: {fileID: 11500000, guid: 370ef8083439e034eb7552612a25b1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 2565538060201293760}
   background: {fileID: 5979349714964923074}
-  textName: {fileID: 4421450331610450427}
+  textEffect: {fileID: 4421450331610450427}
 --- !u!1 &395702264208837752
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2018fc136c7abff4fa5996ea4a0d86cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 2565538060201293760}
   background: {fileID: 4123439104252252883}
   attackType: {fileID: 3705352420981050005}
   backgroundsprite:
@@ -250,6 +249,13 @@ MonoBehaviour:
   cost: 1
   amount: 1
   attackType: 1
+  elements:
+  - {fileID: 7558769593621104533}
+  - {fileID: 1745805735083685066}
+  - {fileID: 4955762033901744324}
+  - {fileID: 6054113579542096406}
+  - {fileID: 8674534278791577960}
+  - {fileID: 7665934358117670246}
 --- !u!1 &654026207151454425
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89bf780e7a781e0499aedfa330ae37ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 2565538060201293760}
   background: {fileID: 8170816945144092153}
   sprites:
   - {fileID: 779533456, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
@@ -1554,7 +1559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486edf0dfd90d054983e678a7fee314b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 2565538060201293760}
   background: {fileID: 6901496890439708601}
   sprites:
   - {fileID: 21079388, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}

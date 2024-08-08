@@ -3,21 +3,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CardEffect : MonoBehaviour
+public class CardEffect : CardElement
 {
     public Card card;
     public GameObject background;
     public GameObject textEffect;
-    // Start is called before the first frame update
-    void Awake()
-    {
-        TextApply(textEffect, card.effect);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+    override public void ApplyScript(Card card){
+        TextApply(textEffect, card.effect);
     }
 
     private void TextApply(GameObject textapply, string effect){

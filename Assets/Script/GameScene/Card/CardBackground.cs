@@ -4,21 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardBackground : MonoBehaviour
+public class CardBackground : CardElement
 {
     public Card card;
     public GameObject background;
     public Sprite[] sprites;
     // Start is called before the first frame update
-    void Awake()
-    {
+    override public void ApplyScript(Card card){
         BackgroundApply(background, card.character, sprites);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void BackgroundApply(GameObject backgroundapply, int character, Sprite[] sprites){

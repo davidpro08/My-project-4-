@@ -4,23 +4,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardAmount : MonoBehaviour
+public class CardAmount : CardElement
 {
-    public Card card;
     public GameObject background;
     public Sprite[] sprites;
     public GameObject textAmount;
     // Start is called before the first frame update
-    void Awake()
-    {
+
+    override public void ApplyScript(Card card){
         TextApply(textAmount, card.amount);
         BackgroundApply(background, card.type, sprites);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void TextApply(GameObject textapply, int amount){

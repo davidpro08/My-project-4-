@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CardType : MonoBehaviour
+public class CardType : CardElement
 {
     public Card card;
     public GameObject background;
     public GameObject textType;
-    // Start is called before the first frame update
-    void Awake()
-    {
+
+    override public void ApplyScript(Card card){
         TextApply(textType, card.type);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void TextApply(GameObject textapply, int type){
         TextMeshProUGUI temptext = textapply.GetComponent<TextMeshProUGUI>();

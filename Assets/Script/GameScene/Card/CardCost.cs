@@ -4,27 +4,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardCost : MonoBehaviour
+public class CardCost : CardElement
 {
-    public Card card;
     public GameObject background;
-
     public Sprite[] sprites;
     public GameObject textCost;
-    // Start is called before the first frame update
-    void Awake()
-    {
+
+    override public void ApplyScript(Card card){
         TextApply(textCost, card.cost);
         BackgroundApply(background, card.type, sprites);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-        private void TextApply(GameObject textapply, int cost){
+    private void TextApply(GameObject textapply, int cost){
         TextMeshProUGUI text = textapply.GetComponent<TextMeshProUGUI>();
         if(cost<0){
             text.text = "cost error";

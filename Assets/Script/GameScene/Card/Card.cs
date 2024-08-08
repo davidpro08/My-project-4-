@@ -39,5 +39,11 @@ public class Card : MonoBehaviour
     */
     public int attackType;
     
+    public CardElement[] elements;
 
+    public void ApplyScript(){
+        foreach (CardElement element in elements){
+            element.ApplyScript(this);
+        }
+    }
 }

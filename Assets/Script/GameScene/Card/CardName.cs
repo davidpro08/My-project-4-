@@ -10,7 +10,7 @@ public class CardName : MonoBehaviour
     public GameObject background;
     public GameObject textName;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         TextApply(textName, card.cardname);
     }
