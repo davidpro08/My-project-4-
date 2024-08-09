@@ -9,11 +9,6 @@ public class CardManager : MonoBehaviour
     public static CardManager Instance { get; private set;}
     //덱을 가져오기
     public Deck deck;
-
-    //복사할 카드 오브젝트
-    public GameObject cardPrefab;
-    //복사된 카드 오브젝트
-    [SerializeField]private GameObject[] createdCards;
     
     /******************************************************************************
     덱과 손, 쓰레기통을 자료구조 Queue를 이용하여 나타낸 이유는
@@ -30,18 +25,10 @@ public class CardManager : MonoBehaviour
     private Queue<Card> discardCard;
     [SerializeField]private int discardMax = 99;
 
-    //지금 몇 장 있는지
-    [SerializeField]private int currenthandindex = 0;
     //턴이 시작될 때 뽑는 카드 개수
     [SerializeField]private int startTurnDrawCount = 3;
 
-    [SerializeField]private GameObject readyArea;
-    
-    [SerializeField]private GameObject handArea;
-    
-    [SerializeField]private GameObject discardArea;
-
-
+    public HandArea handArea;
 
 
     void Awake()
@@ -65,7 +52,7 @@ public class CardManager : MonoBehaviour
         readyCard = new Queue<Card>();
         handCard = new Queue<Card>();
         discardCard = new Queue<Card>();
-        createdCards = new GameObject[handMax];
+        handArea.Init(handMax);
     }
 
     //덱을 읽어서 준비영역에 넣기
@@ -108,70 +95,37 @@ public class CardManager : MonoBehaviour
     public void DiscardHand(){
         //핸드에 카드가 있을때만 보내면 됨
         if(handCard != null){
-            currenthandindex--;
-            Destroy(createdCards[currenthandindex]);
             discardCard.Enqueue(handCard.Dequeue());
+            handArea.DestroyHand();
         }
     }
 
     //카드 뽑기
     public void Draw(){
-
-        if(cardPrefab != null){
-            if(handMax-1 >= currenthandindex){
-
+        if(handMax-1 >= handCard.Count){
             //카드 덱이 비었고 쓰레기통에 카드가 있으면 쓰레기통에서 다시 덱으로 가게 하기
-            if(readyCard.Count<=0 && discardCard.Count >=0){
+            if(readyCard.Count<=0 && discardCard.Count > 0){
                 DiscardCardReturn();
             }
-            //뽑은 카드
+
+            ReadyMix();
+
             Card drawcard = readyCard.Dequeue();
+
             handCard.Enqueue(drawcard);
+            handArea.ViewHand(drawcard);
 
-            //복사본 만들기
-            GameObject createcard = Instantiate(cardPrefab, transform);
-
-            //영역에 넣기
-            createcard.transform.SetParent(handArea.transform);
-
-            //카드에 적용
-            Card card = createcard.transform.GetComponent<Card>();
-            CopyCard(card, drawcard);
-            card.ApplyScript();
-
-            //위치 설정
-            RectTransform rectTransform = createcard.GetComponent<RectTransform>();
-            rectTransform.transform.localPosition = new Vector3(-720 + 240*currenthandindex, 0f, 0f);
-
-            //생성된 카드 배열에 저장(Destroy를 하기 위해서)
-            createdCards[currenthandindex] = createcard;
-            currenthandindex++;
-            }else{
-                Debug.Log("최대 카드 개수 초과");
-            }
         }else{
-            Debug.Log("card 프리팹 없음. 카드 프리팹이 삭제되었는지 확인하거나 HandArea에 안 들어갔는지 확인하기");
+            Debug.Log("최대 카드 개수 초과");
         }
     }
 
+    //랜덤 시스템인데 너무 어렵다
     public void ReadyMix(){
-        IEnumerator it = readyCard.GetEnumerator();
         int rand = Random.Range(0, readyCard.Count);
         for(int i = 0; i<rand; i++){
-            it.MoveNext();
+            readyCard.Enqueue(readyCard.Dequeue());
         }
-        handCard.Enqueue((Card)it.Current);
-    }
-
-    //카드 두개를 받아서 하나의 정보를 다른쪽에 옮김
-    public void CopyCard(Card copy, Card apply){
-        copy.effect = apply.effect;
-        copy.cardname = apply.cardname;
-        copy.type = apply.type;
-        copy.character = apply.character;
-        copy.cost = apply.cost;
-        copy.amount = apply.amount;
-        copy.attackType = apply.attackType;
     }
 
 }

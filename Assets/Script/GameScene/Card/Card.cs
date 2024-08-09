@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
 
-public class Card : MonoBehaviour
+public class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
     //카드 효과
     public string effect;
@@ -45,5 +46,35 @@ public class Card : MonoBehaviour
         foreach (CardElement element in elements){
             element.ApplyScript(this);
         }
+    }
+
+    public RectTransform rectTransform;
+    public Vector2 startPosition;
+    public Transform startParent;
+
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        //시작 위치와 부모 저장해놓기
+        rectTransform = GetComponent<RectTransform>();
+        startPosition = rectTransform.localPosition;
+        startParent = transform.parent;
+        Debug.Log("BeginDrag");
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+
+        rectTransform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        Debug.Log("Drop");
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        rectTransform.localPosition = startPosition;
     }
 }
